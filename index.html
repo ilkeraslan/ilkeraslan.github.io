@@ -140,7 +140,8 @@ section{padding:72px 0}
 .plist .t{font-size:16.5px;line-height:1.4}
 .plist .t a{color:var(--ink);text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .2s}
 .plist .t a:hover{background-size:100% 1px;color:var(--accent)}
-.plist .v{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.plist .v{display:block;font-size:14px;color:var(--signal);margin-top:2px}
+.plist .s{display:block;font-size:14.5px;line-height:1.5;color:var(--muted);margin-top:5px;max-width:74ch}
 .badge{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:3px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 .badge.pub{border-color:var(--signal);color:var(--signal)}
 .pnote{margin-top:18px;font-size:14.5px;color:var(--muted)}
@@ -222,7 +223,7 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
       <p class="role">Lecturer, Kalaidos University of Applied Sciences, Zürich. Dr. rer. pol., Université de Fribourg. Before that, more than a decade as a treaty reinsurance underwriter.</p>
       <div class="actions">
         <a class="btn primary" href="#papers">Read the papers</a>
-        <a class="btn" href="#about">Background</a>
+        <a class="btn" href="Ilker_Aslan_CV.pdf">Download CV (PDF)</a>
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -307,7 +308,7 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
         <div class="kicker">Papers</div>
         <h2>Published articles and working papers</h2>
       </div>
-      <p>Twenty papers, newest first. Titles link to the journal or to SSRN.</p>
+      <p>Twenty papers, newest first, each with a one-sentence summary. Titles link to the journal or to SSRN.</p>
     </div>
     <div class="chips" id="chips" role="group" aria-label="Filter papers by research layer">
       <button class="chip" type="button" data-f="all" aria-pressed="true">All papers</button>
@@ -366,6 +367,8 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
         <p>I am an economist working where insurance markets, financial structures and macroeconomic theory meet.</p>
         <p>Before returning to research and teaching I spent more than a decade in treaty reinsurance in EMEA and international markets, most recently as a senior underwriter for liability, casualty and motor business. That practice shapes the questions I ask: how reinsurance capacity is priced and rationed, how catastrophe and cyber risk reach capital markets, and who absorbs the losses that markets will not carry.</p>
         <p>My research combines quantitative methods with a post-Keynesian theoretical foundation. I hold a doctorate in economics from the Université de Fribourg, a Master of Science in EU Business and Law from Aarhus Universitet, and a Bachelor of Science in Business Administration from the University of Texas at Dallas.</p>
+        <p>I live in Zürich with my wife and our two daughters.</p>
+        <p><a class="btn" href="Ilker_Aslan_CV.pdf">Download CV (PDF)</a></p>
       </div>
       <div>
         <ul class="rows">
@@ -395,6 +398,7 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
       <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4975975">SSRN <span>working papers</span></a></li>
       <li><a href="https://orcid.org/0000-0001-9241-9420">ORCID <span>0000-0001-9241-9420</span></a></li>
       <li><a href="https://www.linkedin.com/in/drilkeraslan/">LinkedIn <span>profile</span></a></li>
+      <li><a href="Ilker_Aslan_CV.pdf">Curriculum vitae <span>PDF</span></a></li>
     </ul>
   </div>
 </section>
@@ -408,26 +412,26 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
 <script>
 const S = id => "https://ssrn.com/abstract=" + id;
 const papers = [
-  {y:2026,t:"Why risk-based premiums will not close the catastrophe protection gap: Conventional pricing, reinsurance capacity, and public scheme design",v:"Risk Management and Insurance Review",u:"https://doi.org/10.1111/rmir.70051",k:"cat",pub:true},
-  {y:2026,t:"Monetary Sovereignty and Catastrophe Fiscal Capacity: Turkey, Japan, and the Limits of Disaster Self-Insurance",v:"Review of Political Economy",u:"https://doi.org/10.1080/09538259.2026.2724127",k:"public",pub:true},
-  {y:2026,t:"The Safest Available Annuity? Fiduciary Litigation and Insurer Choice in Pension Risk Transfer",u:S(7370882),k:"public"},
-  {y:2026,t:"Keynes at the National Mutual: Insurance Practice and the Theory of Long-Term Expectation",u:S(7279420),k:"thought"},
-  {y:2026,t:"The Pricing of Cyber Catastrophe Bonds: Evidence from the First Market Cycle, 2023-2026",u:S(7277339),k:"cat"},
-  {y:2026,t:"Ambiguity and the Supply of Cyber Reinsurance Capacity",u:S(7278099),k:"cat"},
-  {y:2026,t:"Existential Risk from Artificial Intelligence and the Limits of Insurability",u:S(7198561),k:"cat"},
-  {y:2026,t:"Pricing the End of Stationarity: Catastrophe Reinsurance and the Limits of Insurability",u:S(7198578),k:"cat"},
-  {y:2026,t:"The Insurability Frontier: Ambiguity, Capital, and the Supply of Insurance",u:S(7198564),k:"cat"},
-  {y:2026,t:"Testing for Cycle-Dependent Loss Development in Long-Tail Casualty Business",u:S(7144158),k:"cycle"},
-  {y:2026,t:"The Insurability of Skill: Vocational Specificity, Structural Change, and Mobility over the Life Course",u:S(7127758),k:"public"},
-  {y:2026,t:"Fundamental Uncertainty, Reinsurance Capacity, and the Design of a European Catastrophe Insurance Scheme",u:S(7127638),k:"cat"},
-  {y:2026,t:"Underwriting Cycles and the Calibration of Premium Risk under Solvency II",u:S(7127360),k:"cycle"},
-  {y:2026,t:"Collateralized Reinsurance and Credit for Reinsurance under Escalating Catastrophe Risk",u:S(7073638),k:"cycle"},
-  {y:2026,t:"From Peril to Security: A Framework for Assessing ILS Readiness, with Application to Systemic Cyber Risk",u:S(6684118),k:"cat"},
-  {y:2026,t:"Bortis's Classical-Keynesian Synthesis: A Reconstruction and Three Applications",u:S(6684338),k:"thought"},
-  {y:2026,t:"A Countercyclical Capital Buffer for Reinsurance: Evidence from the Underwriting Cycle, 1990-2024",u:S(6683999),k:"cycle"},
-  {y:2026,t:"From Risk Pooling to Asset Class: The Financialization of Reinsurance through a Minskyian Lens",u:S(6490480),k:"cycle"},
-  {y:2026,t:"Conventions, Uncertainty, and Financial Instability: The Reinsurance Underwriting Cycle Through a Post-Keynesian Lens",u:S(6539118),k:"cycle"},
-  {y:2021,t:"Employer of Last Resort as a new 'New Deal': A few thoughts on Turkey",u:S(3984951),k:"public"}
+  {y:2026,t:"Why risk-based premiums will not close the catastrophe protection gap: Conventional pricing, reinsurance capacity, and public scheme design",v:"Risk Management and Insurance Review",u:"https://doi.org/10.1111/rmir.70051",s:"Shows why risk-based premiums cannot close Europe's catastrophe protection gap once climate change removes a stable loss distribution: prices rest on convention, capacity moves in cycles and rationing ratchets upward.",k:"cat",pub:true},
+  {y:2026,t:"Monetary Sovereignty and Catastrophe Fiscal Capacity: Turkey, Japan, and the Limits of Disaster Self-Insurance",v:"Review of Political Economy",u:"https://doi.org/10.1080/09538259.2026.2724127",s:"Introduces catastrophe fiscal capacity and uses Japan in 2011 and Turkey in 2023 to show that a state's ability to absorb disaster losses depends on its degree of monetary sovereignty.",k:"public",pub:true},
+  {y:2026,t:"The Safest Available Annuity? Fiduciary Litigation and Insurer Choice in Pension Risk Transfer",u:S(7370882),s:"Uses plan-level US Form 5500 data to test whether the 2024 wave of fiduciary lawsuits changed which insurers pension plans choose for risk transfer.",k:"public"},
+  {y:2026,t:"Keynes at the National Mutual: Insurance Practice and the Theory of Long-Term Expectation",u:S(7279420),s:"Reads Chapter 12 of the General Theory alongside Keynes's business papers and argues that his years on insurance boards gave concrete meaning to convention, reputation and liquidity.",k:"thought"},
+  {y:2026,t:"The Pricing of Cyber Catastrophe Bonds: Evidence from the First Market Cycle, 2023-2026",u:S(7277339),s:"Examines how Rule 144A cyber catastrophe bonds were priced at issue across the market's first cycle, from 2023 to 2026.",k:"cat"},
+  {y:2026,t:"Ambiguity and the Supply of Cyber Reinsurance Capacity",u:S(7278099),s:"Asks how ambiguity about cyber losses limits the reinsurance capacity that suppliers are willing to offer.",k:"cat"},
+  {y:2026,t:"Existential Risk from Artificial Intelligence and the Limits of Insurability",u:S(7198561),s:"Treats existential risk from AI as a problem in insurance economics and shows that claims payable only on extinction price at zero, so the missing market carries no information about the risk.",k:"cat"},
+  {y:2026,t:"Pricing the End of Stationarity: Catastrophe Reinsurance and the Limits of Insurability",u:S(7198578),s:"Asks what happens to catastrophe reinsurance pricing, and to insurability itself, when climate change ends the assumption of a stationary loss distribution.",k:"cat"},
+  {y:2026,t:"The Insurability Frontier: Ambiguity, Capital, and the Supply of Insurance",u:S(7198564),s:"Develops a supply-side theory of insurability under model uncertainty and derives a closed-form frontier beyond which cover is no longer offered.",k:"cat"},
+  {y:2026,t:"Testing for Cycle-Dependent Loss Development in Long-Tail Casualty Business",u:S(7144158),s:"Tests whether loss development in long-tail casualty business differs across the phases of the underwriting cycle.",k:"cycle"},
+  {y:2026,t:"The Insurability of Skill: Vocational Specificity, Structural Change, and Mobility over the Life Course",u:S(7127758),s:"Studies how the specificity of vocational skills shapes workers' exposure to structural change and their mobility over the life course, read as a question of insurability.",k:"public"},
+  {y:2026,t:"Fundamental Uncertainty, Reinsurance Capacity, and the Design of a European Catastrophe Insurance Scheme",u:S(7127638),s:"Sets out design principles for a European catastrophe insurance scheme when reinsurance capacity is cyclical and loss distributions are fundamentally uncertain.",k:"cat"},
+  {y:2026,t:"Underwriting Cycles and the Calibration of Premium Risk under Solvency II",u:S(7127360),s:"Argues that the Solvency II premium-risk charge moves against underwriting risk over the cycle and proposes a supervisor-published cycle adjustment.",k:"cycle"},
+  {y:2026,t:"Collateralized Reinsurance and Credit for Reinsurance under Escalating Catastrophe Risk",u:S(7073638),s:"Examines collateralized reinsurance and the rules on credit for reinsurance as catastrophe risk escalates.",k:"cycle"},
+  {y:2026,t:"From Peril to Security: A Framework for Assessing ILS Readiness, with Application to Systemic Cyber Risk",u:S(6684118),s:"Proposes six prerequisites for transferring a peril to capital markets and compares indemnity, parametric and hybrid triggers for systemic cyber risk by simulation.",k:"cat"},
+  {y:2026,t:"Bortis's Classical-Keynesian Synthesis: A Reconstruction and Three Applications",u:S(6684338),s:"Reconstructs Heinrich Bortis's classical-Keynesian synthesis and applies it to three questions.",k:"thought"},
+  {y:2026,t:"A Countercyclical Capital Buffer for Reinsurance: Evidence from the Underwriting Cycle, 1990-2024",u:S(6683999),s:"Makes the case for a countercyclical capital buffer in reinsurance, with evidence from the underwriting cycle between 1990 and 2024.",k:"cycle"},
+  {y:2026,t:"From Risk Pooling to Asset Class: The Financialization of Reinsurance through a Minskyian Lens",u:S(6490480),s:"Reads the growth of alternative capital and insurance-linked securities as a financialization of reinsurance, using Minsky's theory of financial instability.",k:"cycle"},
+  {y:2026,t:"Conventions, Uncertainty, and Financial Instability: The Reinsurance Underwriting Cycle Through a Post-Keynesian Lens",u:S(6539118),s:"Explains the reinsurance underwriting cycle through pricing conventions formed under fundamental uncertainty.",k:"cycle"},
+  {y:2021,t:"Employer of Last Resort as a new 'New Deal': A few thoughts on Turkey",u:S(3984951),s:"Discusses an employer-of-last-resort programme as a policy option for Turkey.",k:"public"}
 ];
 const list = document.getElementById("plist");
 const chips = [...document.querySelectorAll(".chip")];
@@ -443,7 +447,7 @@ function render(f){
   const rows = papers.filter(p => f === "all" || (f === "pub" ? p.pub : p.k === f));
   list.innerHTML = rows.length ? rows.map(p =>
     '<li><span class="yr">' + p.y + '</span><span class="t"><a href="' + p.u + '">' + esc(p.t) + '</a>' +
-    (p.v ? '<span class="v">' + esc(p.v) + '</span>' : '') + '</span>' +
+    (p.v ? '<span class="v">' + esc(p.v) + '</span>' : '') + (p.s ? '<span class="s">' + esc(p.s) + '</span>' : '') + '</span>' +
     '<span class="badge' + (p.pub ? ' pub' : '') + '">' + (p.pub ? 'Journal article' : 'Working paper') + '</span></li>'
   ).join("") : '<li class="empty">No papers in this group yet.</li>';
   chips.forEach(c => c.setAttribute("aria-pressed", String(c.dataset.f === f)));
