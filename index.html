@@ -175,13 +175,79 @@ section{padding:104px 0}
 .layer[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .layer[aria-pressed="true"] .tag,.layer[aria-pressed="true"] .desc{color:color-mix(in srgb,var(--paper) 72%,transparent)}
 .layer[aria-pressed="true"] .count{color:var(--paper)}
-.featured h3.label{font-family:var(--body);font-size:14.5px;font-weight:500;color:var(--muted);margin-bottom:6px}
-.hl{padding:24px 0 26px;border-top:1px solid var(--line)}
-.hl:last-child{border-bottom:1px solid var(--line)}
-.hl .venue{font-size:14px;font-weight:500;color:var(--signal)}
-.hl h4{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.08;margin:6px 0 10px;text-wrap:balance}
-.hl p{font-size:15.5px;color:var(--muted);max-width:60ch}
-.hl a{display:inline-block;margin-top:12px;font-weight:500;font-size:15px}
+.prog-intro h2{font-family:var(--display);font-size:clamp(40px,5vw,62px);line-height:1;letter-spacing:-.012em;text-wrap:balance}
+.prog-intro p{margin-top:26px;color:var(--muted);max-width:46ch}
+
+/* Featured work */
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fw-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end;margin-top:96px;padding-top:44px;border-top:1px solid var(--line);margin-bottom:40px}
+.fw-head h3{font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1;letter-spacing:-.01em}
+.fw-head p{color:var(--muted);max-width:52ch}
+.fw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:64px}
+.fw{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:22px}
+.fw-chart{margin:0;display:flex;flex-direction:column;padding:24px 24px 18px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.fw-body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:200px}
+.fw-chart figcaption{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:1.45;color:var(--muted)}
+.fw-text .venue{font-size:14px;font-weight:500;color:var(--signal)}
+.fw-text h4{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.08;margin:6px 0 10px;text-wrap:balance}
+.fw-text p{font-size:15.5px;color:var(--muted);max-width:60ch}
+.fw-text a{display:inline-block;margin-top:12px;font-weight:500;font-size:15px}
+.fw-track{position:relative;display:block;height:14px;background:color-mix(in srgb,var(--muted) 13%,transparent);border-radius:2px}
+.fw-track i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:2px 0 0 2px}
+.fw-track.bare{background:none;height:30px}
+/* bars */
+.fw-bars{display:grid;gap:15px}
+.fw-row{display:grid;grid-template-columns:minmax(0,1fr) 2.6em;gap:5px 12px;align-items:center}
+.fw-row .lab{grid-column:1/-1;font-size:13.5px;line-height:1.3}
+.fw-row b{font-weight:500;font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+.fw-row:nth-child(3) .fw-track i{background:color-mix(in srgb,var(--accent) 78%,var(--ink))}
+.fw-gaprow{margin-top:-11px}
+.fw-brace{position:absolute;top:0;height:9px;border:1.5px solid var(--signal);border-top:0}
+.fw-bracelab{position:absolute;top:0;margin-left:10px;font-size:13px;font-weight:500;color:var(--signal);white-space:nowrap;line-height:1.1}
+/* comparison */
+.fw-cmp{display:grid;gap:26px}
+.fw-cmp-row{display:grid;grid-template-columns:7.6em minmax(0,1fr) 3.2em 9.4em;gap:4px 14px;align-items:center}
+.fw-cmp-row.hd{font-size:12.5px;color:var(--muted);align-items:end;margin-bottom:-8px}
+.fw-cmp-row.hd span:last-child{grid-column:4}
+.fw-cmp .c{font-size:14px;font-weight:500;line-height:1.25}
+.fw-cmp .c small{display:block;font-size:12.5px;font-weight:400;color:var(--muted)}
+.fw-cmp b{font-weight:500;font-size:14px;font-variant-numeric:tabular-nums}
+.fw-cmp .fx{font-size:14px;font-weight:500;white-space:nowrap}
+.fw-cmp .fx::before{display:inline-block;margin-right:7px;font-size:10px;transform:translateY(-1px)}
+.fw-cmp .fx.up{color:var(--accent)}.fw-cmp .fx.up::before{content:"▲"}
+.fw-cmp .fx.down{color:var(--signal)}.fw-cmp .fx.down::before{content:"▼"}
+/* scatter */
+.fw-sc{position:relative;aspect-ratio:1000/450;margin:26px 4px 46px 30px}
+.fw-sc svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fw-sc .gl{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke}
+.fw-sc .ax{stroke:color-mix(in srgb,var(--muted) 60%,transparent);stroke-width:1;vector-effect:non-scaling-stroke}
+.fw-sc .ray{stroke:var(--muted);stroke-width:1.25;stroke-dasharray:5 4;vector-effect:non-scaling-stroke}
+.fw-sc .r25{opacity:.7}
+.fw-sc circle{fill:var(--accent);stroke:var(--surface);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.fw-sc .yt,.fw-sc .xt,.fw-sc .yl,.fw-sc .xl,.fw-sc .rl{position:absolute;font-size:12px;color:var(--muted);white-space:nowrap;line-height:1;font-variant-numeric:tabular-nums}
+.fw-sc .yt{left:-30px;width:20px;text-align:right;transform:translateY(50%)}
+.fw-sc .xt{top:calc(100% + 8px);transform:translateX(-50%)}
+.fw-sc .xt:first-of-type{transform:none}
+.fw-sc .yl{left:-30px;bottom:calc(100% + 12px)}
+.fw-sc .xl{right:0;top:calc(100% + 28px)}
+.fw-sc .rl{transform-origin:0 100%;transform:rotate(calc(-1 * var(--a))) translateY(-9px)}
+.fw-sc .rl.a25{transform:rotate(calc(-1 * var(--a))) translateY(calc(100% + 6px))}
+/* timeline */
+.fw-tl{padding-top:6px}
+.fw-tl-plot{position:relative;padding-top:30px}
+.fw-tl .span{position:absolute;top:22px;bottom:0;background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--muted) 16%,transparent) 0 1px,transparent 1px 6px)}
+.fw-tl .spanlab,.fw-tl .gtlab{position:absolute;top:0;font-size:12.5px;line-height:1;white-space:nowrap}
+.fw-tl .spanlab{color:var(--muted)}
+.fw-tl .gt{position:absolute;top:22px;bottom:-4px;width:0;border-left:1.5px solid var(--signal)}
+.fw-tl .gtlab{color:var(--signal);font-weight:500;margin-left:7px}
+.fw-tl .lane{position:relative;height:66px}
+.fw-tl .lane .lab{position:absolute;left:0;top:12px;font-size:13px;line-height:1;white-space:nowrap;background:var(--surface);padding-right:8px}
+.fw-tl .seg{position:absolute;top:32px;height:14px;background:var(--accent);border-radius:2px}
+.fw-tl .seg.thin{top:37px;height:4px;background:color-mix(in srgb,var(--accent) 55%,transparent)}
+.fw-tl .dot{position:absolute;top:33px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--signal);border:2px solid var(--surface)}
+.fw-tl .dotlab{position:absolute;top:12px;margin-left:-4px;font-size:12.5px;line-height:1;font-weight:500;color:var(--signal);white-space:nowrap}
+.fw-tl-axis{position:relative;height:26px;margin-top:6px;border-top:1px solid color-mix(in srgb,var(--muted) 60%,transparent)}
+.fw-tl-axis span{position:absolute;top:8px;transform:translateX(-50%);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 
 /* Papers */
 .papers{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -243,7 +309,9 @@ footer .wrap{background:linear-gradient(color-mix(in srgb,var(--on-night) 22%,tr
 }
 @media (max-width: 860px){
   .wrap{padding:0 22px}
-  .head,.programme,.cols,.about,.contact .wrap{grid-template-columns:minmax(0,1fr);gap:32px}
+  .head,.programme,.cols,.about,.contact .wrap,.fw-head,.fw-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .fw-grid{row-gap:56px}
+  .fw-head{margin-top:72px;padding-top:36px;gap:16px;margin-bottom:28px}
   .bar .wrap{min-height:54px;gap:14px}
   .brand{font-size:22px;flex:none}
   .nav{overflow-x:auto;scrollbar-width:none;gap:20px;padding:0 0 0 2px;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)}
@@ -285,6 +353,16 @@ footer .wrap{background:linear-gradient(color-mix(in srgb,var(--on-night) 22%,tr
   .axisrow span{font-size:11px}
   .axisrow .m,.axisrow .m2{display:none}
   .quote{padding:64px 0}
+  .fw-chart{padding:20px 16px 16px}
+  .fw-cmp-row{grid-template-columns:minmax(0,1fr) 3.2em;gap:6px 12px}
+  .fw-cmp-row.hd{display:none}
+  .fw-cmp .c{grid-column:1/-1}
+  .fw-cmp .fx{grid-column:1/-1}
+  .fw .lg{display:none}
+  .fw-tl .dotlab{display:none}
+  .fw-track.bare{height:36px}
+  .fw-bracelab{top:15px;margin-left:0;transform:translateX(-100%)}
+  .fw-tl .lane .lab{font-size:12.5px}
 }
 @media print{.bar,.curve,.actions,.chips,.more,.copy{display:none}body{background:#fff}.contact{background:#fff;color:#000}}
 </style>
@@ -356,13 +434,11 @@ footer .wrap{background:linear-gradient(color-mix(in srgb,var(--on-night) 22%,tr
 
 <section id="research">
   <div class="wrap">
-    <div class="head">
-      <div>
-        <h2>A research programme, read like a reinsurance programme</h2>
-      </div>
-      <p>A reinsurance programme is drawn as a tower: each layer sits on the one beneath and pays only for larger losses. My work stacks the same way, from theory at the base to the state at the top. Each layer's height follows the number of papers in it; select one to see them.</p>
-    </div>
     <div class="programme">
+      <div class="prog-intro">
+        <h2>A research programme, read like a reinsurance programme</h2>
+        <p>A reinsurance programme is drawn as a tower: each layer sits on the one beneath and pays only for larger losses. My work stacks the same way, from theory at the base to the state at the top. Each layer's height follows the number of papers in it; select one to see them.</p>
+      </div>
       <div class="towerbox">
         <div class="sev" aria-hidden="true"><span>Severity rises upward</span></div>
         <div class="tower" id="tower" role="group" aria-label="Research layers, from foundation at the bottom to public backstop at the top">
@@ -388,27 +464,110 @@ footer .wrap{background:linear-gradient(color-mix(in srgb,var(--on-night) 22%,tr
           </button>
         </div>
       </div>
-      <div class="featured">
-        <h3 class="label">Featured work</h3>
-        <article class="hl">
+    </div>
+    <div class="fw-head">
+      <h3>Featured work</h3>
+      <p>Four papers, each shown through the result it turns on. The figures are redrawn from the papers’ own tables, simulations and sources.</p>
+    </div>
+    <div class="fw-grid">
+      <article class="fw">
+        <figure class="fw-chart">
+          <div class="fw-body">
+<div class="fw-bars" aria-hidden="true">
+<div class="fw-row"><span class="lab">Fixed risk load (benchmark)</span><span class="fw-track"><i style="width:74%"></i></span><b>74%</b></div>
+<div class="fw-row"><span class="lab">Conventional pricing, stationary losses</span><span class="fw-track"><i style="width:66%"></i></span><b>66%</b></div>
+<div class="fw-row"><span class="lab">Conventional pricing, losses drift with the climate</span><span class="fw-track"><i style="width:59%"></i></span><b>59%</b></div>
+<div class="fw-row fw-gaprow"><span class="fw-track bare"><span class="fw-brace" style="left:59%;width:15%"></span><span class="fw-bracelab" style="left:74%">15-point protection gap</span></span><b></b></div>
+</div>
+          <p class="sr">Insured share of catastrophe losses in the final decade: 74 per cent with a fixed risk load, 66 per cent under conventional pricing with stationary losses, and 59 per cent when losses drift with the climate, a 15-point protection gap.</p>
+          </div>
+          <figcaption>Insured share of catastrophe losses over the last decade of each simulated path, mean of 1,000 paths. Source: the article’s simulation.</figcaption>
+        </figure>
+        <div class="fw-text">
           <div class="venue">Risk Management and Insurance Review, 2026. Open access</div>
           <h4>Why Risk-Based Premiums Will Not Close the Catastrophe Protection Gap</h4>
-          <p>Europe insures only a fraction of its natural catastrophe losses, and the proposed EU scheme relies on risk-based premiums to change that. Once climate change removes a stable loss distribution, catastrophe prices rest on convention, reinsurance capacity moves in cycles and rationing ratchets upward, so pricing alone cannot close the gap.</p>
+          <p>Europe insures only a fraction of its natural catastrophe losses, and the proposed EU scheme relies on risk-based premiums to change that. Once climate change removes a stable loss distribution, prices rest on convention, capacity moves in cycles and rationing ratchets upward, so pricing alone cannot close the gap.</p>
           <a href="https://doi.org/10.1111/rmir.70051">Read the article</a>
-        </article>
-        <article class="hl">
+        </div>
+      </article>
+      <article class="fw">
+        <figure class="fw-chart">
+          <div class="fw-body">
+<div class="fw-cmp" aria-hidden="true">
+<div class="fw-cmp-row hd"><span></span><span>Public debt, % of GDP</span><span></span><span>Currency response</span></div>
+<div class="fw-cmp-row"><span class="c">Japan, 2011<small>Loss: 3.5% of GDP</small></span><span class="fw-track"><i style="width:92.0%"></i></span><b>230%</b><span class="fx up">Yen rose</span></div>
+<div class="fw-cmp-row"><span class="c">Turkey, 2023<small>Loss: 9% of GDP</small></span><span class="fw-track"><i style="width:12.0%"></i></span><b>30%</b><span class="fx down">Lira fell about 30%</span></div>
+</div>
+          <p class="sr">Japan, 2011: loss 3.5 per cent of GDP, public debt about 230 per cent of GDP, the yen rose. Turkey, 2023: loss about 9 per cent of GDP, public debt about 30 per cent of GDP, the lira fell about 30 per cent.</p>
+          </div>
+          <figcaption>Gross public debt when each earthquake struck, and the currency’s response. Sources: Cabinet Office, Bank of Japan, CBRT, IMF.</figcaption>
+        </figure>
+        <div class="fw-text">
           <div class="venue">Review of Political Economy, 2026</div>
           <h4>Monetary Sovereignty and Catastrophe Fiscal Capacity</h4>
-          <p>Japan absorbed the 2011 earthquake without financial stress, while Turkey's 2023 earthquakes were followed by a sharp fall in the lira. The paper introduces catastrophe fiscal capacity, a state's ability to finance recovery without currency, inflation or debt stress, and traces it to the degree of monetary sovereignty.</p>
+          <p>Japan carried far more debt yet absorbed the 2011 earthquake without financial stress; Turkey’s 2023 earthquakes were followed by a sharp fall in the lira. The paper introduces catastrophe fiscal capacity, a state’s ability to finance recovery without currency, inflation or debt stress, and traces it to monetary sovereignty.</p>
           <a href="https://doi.org/10.1080/09538259.2026.2724127">Read the article</a>
-        </article>
-        <article class="hl">
+        </div>
+      </article>
+      <article class="fw">
+        <figure class="fw-chart">
+          <div class="fw-body">
+<div class="fw-sc">
+<svg viewBox="0 0 1000 450" aria-hidden="true" focusable="false"><line class="gl" x1="0" x2="1000" y1="321.4" y2="321.4"/><line class="gl" x1="0" x2="1000" y1="192.9" y2="192.9"/><line class="gl" x1="0" x2="1000" y1="64.3" y2="64.3"/><line class="ax" x1="0" x2="1000" y1="450" y2="450"/><line class="ray r23" x1="0" y1="450" x2="1000" y2="183.9"/><line class="ray r25" x1="0" y1="450" x2="1000" y2="273.5"/><circle cx="875.6" cy="136.6" r="12"/><circle cx="617.8" cy="152.7" r="12"/><circle cx="764.4" cy="64.3" r="12"/><circle cx="560.0" cy="32.1" r="12"/><circle cx="560.0" cy="24.1" r="12"/><circle cx="413.3" cy="112.5" r="12"/><circle cx="697.8" cy="176.8" r="12"/><circle cx="364.4" cy="225.0" r="12"/><circle cx="582.2" cy="160.7" r="12"/><circle cx="911.1" cy="112.5" r="12"/></svg>
+<span class="yt" style="bottom:0.0%" aria-hidden="true">0</span>
+<span class="yt" style="bottom:28.57%" aria-hidden="true">4</span>
+<span class="yt" style="bottom:57.14%" aria-hidden="true">8</span>
+<span class="yt" style="bottom:85.71%" aria-hidden="true">12</span>
+<span class="xt" style="left:0.0%" aria-hidden="true">0</span>
+<span class="xt" style="left:22.22%" aria-hidden="true">0.5</span>
+<span class="xt" style="left:44.44%" aria-hidden="true">1.0</span>
+<span class="xt" style="left:66.67%" aria-hidden="true">1.5</span>
+<span class="xt" style="left:88.89%" aria-hidden="true">2.0</span>
+<span class="yl" aria-hidden="true">Spread, % a year</span>
+<span class="xl" aria-hidden="true">Modelled expected loss, % a year</span>
+<span class="rl a23" style="left:22.22%;bottom:13.14%;--a:14.90deg">Market<span class="lg"> average</span>, end 2023</span>
+<span class="rl a25" style="left:53.33%;bottom:20.91%;--a:10.01deg">Market<span class="lg"> average</span>, end 2025</span>
+</div>
+          <p class="sr">All ten cyber catastrophe bond tranches lie above the market's average price per unit of expected loss, both at the end of 2023 (3.68 times expected loss) and at the end of 2025 (2.44 times); the mean premium ratio is 2.3.</p>
+          </div>
+          <figcaption>Every publicly priced cyber catastrophe bond tranche, November 2023 to June 2026, against the whole market’s average price per unit of expected loss. Source: Artemis; author’s calculations.</figcaption>
+        </figure>
+        <div class="fw-text">
+          <div class="venue">Working paper, 2026</div>
+          <h4>The Pricing of Cyber Catastrophe Bonds</h4>
+          <p>Cyber risk reached the catastrophe bond market in November 2023. All ten priced tranches paid more than natural-catastrophe bonds per unit of expected loss, about twice as much on average, and the premium did not fade as the wider market softened.</p>
+          <a href="https://ssrn.com/abstract=7277339">Read the working paper</a>
+        </div>
+      </article>
+      <article class="fw">
+        <figure class="fw-chart">
+          <div class="fw-body">
+<div class="fw-tl" aria-hidden="true"><div class="fw-tl-plot">
+<span class="span" style="left:37.93%;width:10.35%"></span>
+<span class="spanlab" style="right:51.72%">Credit cycling fails</span>
+<span class="gt" style="left:62.41%"></span>
+<span class="gtlab" style="left:62.41%">General Theory</span>
+<div class="lane"><span class="lab">National Mutual<span class="lg">, chairman 1921–38</span></span><span class="seg thin" style="left:3.45%;width:6.89%"></span><span class="seg" style="left:10.34%;width:61.21%"></span><span class="dot" style="left:69.66%"></span><span class="dotlab" style="left:69.66%">1938 memorandum</span></div>
+<div class="lane"><span class="lab">Provincial<span class="lg"> Insurance, director 1923–46</span></span><span class="seg" style="left:17.24%;width:80.35%"></span></div>
+</div><div class="fw-tl-axis">
+<span style="left:6.9%">1920</span>
+<span style="left:24.14%">1925</span>
+<span style="left:41.38%">1930</span>
+<span style="left:58.62%">1935</span>
+<span style="left:75.86%">1940</span>
+<span style="left:93.1%">1945</span>
+</div></div>
+          <p class="sr">Keynes sat on the National Mutual board from 1919 and chaired it from 1921 to 1938, and was a director of the Provincial from 1923 to 1946. His credit-cycling policy failed between 1929 and 1932; the General Theory appeared in February 1936; his 1938 memorandum to the board restates its Chapter 12.</p>
+          </div>
+          <figcaption>Keynes’s insurance appointments against the writing of the General Theory. His 1938 memorandum to the National Mutual board restates Chapter 12 almost clause by clause.</figcaption>
+        </figure>
+        <div class="fw-text">
           <div class="venue">Working paper, to be presented in Amiens, December 2026</div>
           <h4>Keynes at the National Mutual</h4>
           <p>Keynes chaired a life insurer while he wrote the General Theory. Read alongside his business papers, Chapter 12 shows how boardroom experience gave concrete meaning to convention, reputation and liquidity in his theory of long-term expectation.</p>
           <a href="https://ssrn.com/abstract=7279420">Read the working paper</a>
-        </article>
-      </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
