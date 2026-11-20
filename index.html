@@ -165,6 +165,8 @@ section{padding:72px 0}
 .badge{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:3px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 .badge.pub{border-color:var(--signal);color:var(--signal)}
 .pnote{margin-top:18px;font-size:14.5px;color:var(--muted)}
+.more{margin-top:24px}
+.more[hidden]{display:none}
 .empty{padding:22px 0;color:var(--muted)}
 
 /* Two-column lists */
@@ -329,10 +331,11 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
         <div class="kicker">Papers</div>
         <h2>Published articles and working papers</h2>
       </div>
-      <p>Twenty-eight papers, newest first, each with a one-sentence summary. Titles link to the journal, to SSRN or to the paper itself as a PDF.</p>
+      <p>A selection of eight papers, each with a one-sentence summary; the full list and the filters are one click away. Titles link to the journal, to SSRN or to the paper itself as a PDF.</p>
     </div>
     <div class="chips" id="chips" role="group" aria-label="Filter papers by research layer">
-      <button class="chip" type="button" data-f="all" aria-pressed="true">All papers</button>
+      <button class="chip" type="button" data-f="sel" aria-pressed="true">Selected papers</button>
+      <button class="chip" type="button" data-f="all" aria-pressed="false">All papers</button>
       <button class="chip" type="button" data-f="pub" aria-pressed="false">Published</button>
       <button class="chip" type="button" data-f="cycle" aria-pressed="false">Underwriting cycle</button>
       <button class="chip" type="button" data-f="cat" aria-pressed="false">Catastrophe and cyber</button>
@@ -340,6 +343,7 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
       <button class="chip" type="button" data-f="thought" aria-pressed="false">History of thought</button>
     </div>
     <ul class="plist" id="plist"></ul>
+    <div class="more" id="more"><button class="btn" type="button" id="showall">Show all papers</button></div>
     <p class="pnote">Posted versions are also listed on <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4975975">SSRN</a> and <a href="https://scholar.google.com/citations?user=typ8zTgAAAAJ">Google Scholar</a>.</p>
   </div>
 </section>
@@ -434,22 +438,22 @@ footer .wrap{border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent
 <script>
 const S = id => "https://ssrn.com/abstract=" + id;
 const papers = [
-  {y:2026,t:"Why risk-based premiums will not close the catastrophe protection gap: Conventional pricing, reinsurance capacity, and public scheme design",v:"Risk Management and Insurance Review, 2026",u:"https://doi.org/10.1111/rmir.70051",s:"Shows why risk-based premiums cannot close Europe's catastrophe protection gap once climate change removes a stable loss distribution: prices rest on convention, capacity moves in cycles and rationing ratchets upward.",k:"cat",pub:true},
-  {y:2026,t:"Monetary Sovereignty and Catastrophe Fiscal Capacity: Turkey, Japan, and the Limits of Disaster Self-Insurance",v:"Review of Political Economy, 2026",u:"https://doi.org/10.1080/09538259.2026.2724127",s:"Introduces catastrophe fiscal capacity and uses Japan in 2011 and Turkey in 2023 to show that a state's ability to absorb disaster losses depends on its degree of monetary sovereignty.",k:"public",pub:true},
+  {sel:1,y:2026,t:"Why risk-based premiums will not close the catastrophe protection gap: Conventional pricing, reinsurance capacity, and public scheme design",v:"Risk Management and Insurance Review, 2026",u:"https://doi.org/10.1111/rmir.70051",s:"Shows why risk-based premiums cannot close Europe's catastrophe protection gap once climate change removes a stable loss distribution: prices rest on convention, capacity moves in cycles and rationing ratchets upward.",k:"cat",pub:true},
+  {sel:2,y:2026,t:"Monetary Sovereignty and Catastrophe Fiscal Capacity: Turkey, Japan, and the Limits of Disaster Self-Insurance",v:"Review of Political Economy, 2026",u:"https://doi.org/10.1080/09538259.2026.2724127",s:"Introduces catastrophe fiscal capacity and uses Japan in 2011 and Turkey in 2023 to show that a state's ability to absorb disaster losses depends on its degree of monetary sovereignty.",k:"public",pub:true},
   {y:2026,t:"Turbulent Arbitrage in Reinsurance: Regulating Capital and the Cycle",u:"papers/Aslan_2026_Turbulent_Arbitrage_in_Reinsurance.pdf",s:"Reads the underwriting cycle through Anwar Shaikh's theory of real competition: the price of a layer is regulated by the cheapest reproducible form of risk capital, and sector and firm data for 2006–2025 show profit rates equalising turbulently rather than persisting.",k:"cycle"},
-  {y:2026,t:"Reinstatement Provisions in Catastrophe Reinsurance: The Contract Economics of Post-Loss Capacity",u:"papers/Aslan_2026_Reinstatement_Provisions_in_Catastrophe_Reinsurance.pdf",s:"Asks why a cedent wants reinstatements at all and shows, in a two-period model, that restoration paid for at inception is a contingent forward on post-loss capacity, valuable only when the post-loss price is uncertain and never worth buying for the full limit.",k:"cycle"},
+  {sel:7,y:2026,t:"Reinstatement Provisions in Catastrophe Reinsurance: The Contract Economics of Post-Loss Capacity",u:"papers/Aslan_2026_Reinstatement_Provisions_in_Catastrophe_Reinsurance.pdf",s:"Asks why a cedent wants reinstatements at all and shows, in a two-period model, that restoration paid for at inception is a contingent forward on post-loss capacity, valuable only when the post-loss price is uncertain and never worth buying for the full limit.",k:"cycle"},
   {y:2026,t:"Price Softening, Structural Discipline: The Reinsurance Underwriting Cycle after Alternative Capital",u:"papers/Aslan_2026_Price_Softening_Structural_Discipline.pdf",s:"Separates the price of reinsurance from its structure (attachments, aggregation, wordings and reinstatements) and shows that record alternative capital drove the sharp price fall at the January 2026 renewal while the structural discipline of the 2023 hard market largely held.",k:"cycle"},
   {y:2026,t:"Who Holds Correlated AI Losses? Concentration and Risk Allocation in the AI Supply Chain",u:"papers/Aslan_2026_Who_Holds_Correlated_AI_Losses.pdf",s:"Shows that concentration among AI model providers ties the liability risk of many firms to a few common shocks, and traces how losses that insurers now exclude pass to the deploying firms and their banks, using annual reports of 313 firms and syndicated-loan data.",k:"cat"},
-  {y:2026,t:"Who Sets the Deduction? Central Bank Losses and the Fiscal Cost of Monetary Tightening",u:"papers/Aslan_2026_Who_Sets_the_Deduction.pdf",s:"Codes who sets the deduction central banks make before paying out profits at 55 banks and how the losses of 2008–15 and 2022–24 were absorbed, and shows that the rule re-times the fiscal cost of tightening rather than changing it, so the case for buffers rests on independence.",k:"public"},
+  {sel:8,y:2026,t:"Who Sets the Deduction? Central Bank Losses and the Fiscal Cost of Monetary Tightening",u:"papers/Aslan_2026_Who_Sets_the_Deduction.pdf",s:"Codes who sets the deduction central banks make before paying out profits at 55 banks and how the losses of 2008–15 and 2022–24 were absorbed, and shows that the rule re-times the fiscal cost of tightening rather than changing it, so the case for buffers rests on independence.",k:"public"},
   {y:2026,t:"Accounting Rules, Currency Hedging and External Adjustment: Evidence from Taiwan's Life Insurers",u:"papers/Aslan_2026_Currency_Hedging_Taiwan_Life_Insurers.pdf",s:"Uses Taiwan's 2026 accounting change for foreign bonds to show that at least 30 per cent of life insurers' currency hedging served reported earnings, and traces the fall in hedge ratios through to the spot market and the Taiwan dollar.",k:"public"},
   {y:2026,t:"Participation Is Not Protection: Sovereign Catastrophe Cover and Reserve Adequacy in MENAAP",u:"papers/Aslan_2026_Participation_Is_Not_Protection.pdf",s:"Prices parametric catastrophe cover against foreign-exchange reserves as rival ways of meeting a disaster's foreign-currency need, and shows that cover pays only when hazard frequency times the market's loading falls below the carry cost of reserves.",k:"public"},
   {y:2026,t:"Governing the Unmeasurable: Rules, Discretion, and the Actuarial Convention",u:"papers/Aslan_2026_Governing_the_Unmeasurable.pdf",s:"Treats actuarial standards such as the one-in-two-hundred calibration as conventions in Keynes's sense and compares rules, discretion and frozen parameters as ways of governing them, with an application to Solvency II.",k:"cycle"},
   {y:2026,t:"The Demand and Growth Regime of Switzerland: Export-Led Mercantilism under Safe-Haven Pressure",u:"papers/Aslan_2026_Demand_and_Growth_Regime_of_Switzerland.pdf",s:"Gives the first demand and growth regime classification of Switzerland for 2000–2025 and finds a persistently export-led mercantilist regime held together by the Swiss National Bank's absorption of safe-haven capital inflows.",k:"public"},
   {y:2026,t:"The Safest Available Annuity? Fiduciary Litigation and Insurer Choice in Pension Risk Transfer",u:S(7370882),s:"Uses plan-level US Form 5500 data to test whether the 2024 wave of fiduciary lawsuits changed which insurers pension plans choose for risk transfer.",k:"public"},
-  {y:2026,t:"Keynes at the National Mutual: Insurance Practice and the Theory of Long-Term Expectation",u:S(7279420),s:"Reads Chapter 12 of the General Theory alongside Keynes's business papers and argues that his years on insurance boards gave concrete meaning to convention, reputation and liquidity.",k:"thought"},
-  {y:2026,t:"The Pricing of Cyber Catastrophe Bonds: Evidence from the First Market Cycle, 2023-2026",u:S(7277339),s:"Assembles every Rule 144A cyber catastrophe bond issued to mid-2026 and finds that they pay about twice the spread per unit of expected loss of natural-catastrophe bonds, a premium that has not faded as the market matured.",k:"cat"},
+  {sel:3,y:2026,t:"Keynes at the National Mutual: Insurance Practice and the Theory of Long-Term Expectation",u:S(7279420),s:"Reads Chapter 12 of the General Theory alongside Keynes's business papers and argues that his years on insurance boards gave concrete meaning to convention, reputation and liquidity.",k:"thought"},
+  {sel:6,y:2026,t:"The Pricing of Cyber Catastrophe Bonds: Evidence from the First Market Cycle, 2023-2026",u:S(7277339),s:"Assembles every Rule 144A cyber catastrophe bond issued to mid-2026 and finds that they pay about twice the spread per unit of expected loss of natural-catastrophe bonds, a premium that has not faded as the market matured.",k:"cat"},
   {y:2026,t:"Ambiguity and the Supply of Cyber Reinsurance Capacity",u:S(7278099),s:"Models reinsurers who cannot tell which cyber loss model is right and shows that growing disagreement between credible models makes capacity collapse abruptly while prices stay put, which is why the market has answered with exclusions and narrower contracts.",k:"cat"},
-  {y:2026,t:"Capital Destruction and the Limits of Insurability: What Prices Reveal about Catastrophic Risk from Artificial Intelligence",u:S(7198561),s:"Asks what insurance and event-contract prices can reveal about catastrophic AI risk and shows that when the loss destroys part of the assets behind the claims, prices identify only a range of probabilities, so destroyed assets can make a likely catastrophe look unlikely.",k:"cat"},
+  {sel:4,y:2026,t:"Capital Destruction and the Limits of Insurability: What Prices Reveal about Catastrophic Risk from Artificial Intelligence",u:S(7198561),s:"Asks what insurance and event-contract prices can reveal about catastrophic AI risk and shows that when the loss destroys part of the assets behind the claims, prices identify only a range of probabilities, so destroyed assets can make a likely catastrophe look unlikely.",k:"cat"},
   {y:2026,t:"Pricing the End of Stationarity: Catastrophe Reinsurance and the Limits of Insurability",u:S(7198578),s:"Reads insurability as a convention that projects past losses onto the future, and interprets the 2017–2026 retreat of catastrophe cover from wildfire and wind zones as that convention failing under climate change, with the released risk moving onto public balance sheets.",k:"cat"},
   {y:2026,t:"The Insurability Frontier: Ambiguity, Capital, and the Supply of Insurance",u:S(7198564),s:"Develops a supply-side theory of insurability under model uncertainty and derives a closed-form frontier beyond which cover is no longer offered.",k:"cat"},
   {y:2026,t:"Testing for Cycle-Dependent Loss Development in Long-Tail Casualty Business",u:S(7144158),s:"Tests the reserving-cycle belief on 426 Schedule P triangles and finds that, once trends are removed, soft-market accident years do not develop worse; what predicts adverse development is a company growing faster than its line.",k:"cycle"},
@@ -460,7 +464,7 @@ const papers = [
   {y:2026,t:"Bortis's Classical-Keynesian Synthesis: A Reconstruction and Three Applications",u:S(6684338),s:"Reconstructs Heinrich Bortis's synthesis of classical and Keynesian economics and extends it to monetary sovereignty in peripheral economies, to Minskyian finance and to a comparison with critical realism.",k:"thought"},
   {y:2026,t:"A Countercyclical Capital Buffer for Reinsurance: Evidence from the Underwriting Cycle, 1990-2024",u:S(6683999),s:"Builds a composite indicator of the reinsurance cycle from 35 years of market data and shows that a Basel-style countercyclical capital buffer would have flagged the 2013–2016 soft market and restrained capacity growth.",k:"cycle"},
   {y:2026,t:"From Risk Pooling to Asset Class: The Financialization of Reinsurance through a Minskyian Lens",u:S(6490480),s:"Applies Minsky's financial instability hypothesis to reinsurance and argues that insurance-linked securities have moved the market from hedge towards speculative finance, damping the pricing cycle while capital avoids the regions with the largest protection gaps.",k:"cycle"},
-  {y:2026,t:"Conventions, Uncertainty, and Financial Instability: The Reinsurance Underwriting Cycle Through a Post-Keynesian Lens",u:S(6539118),s:"Draws on a decade of underwriting experience to argue that the reinsurance cycle is generated inside the market, as conventions adopted under fundamental uncertainty push margins through Minsky's hedge, speculative and Ponzi stages, with evidence from five cycles between 1985 and 2025.",k:"cycle"},
+  {sel:5,y:2026,t:"Conventions, Uncertainty, and Financial Instability: The Reinsurance Underwriting Cycle Through a Post-Keynesian Lens",u:S(6539118),s:"Draws on a decade of underwriting experience to argue that the reinsurance cycle is generated inside the market, as conventions adopted under fundamental uncertainty push margins through Minsky's hedge, speculative and Ponzi stages, with evidence from five cycles between 1985 and 2025.",k:"cycle"},
   {y:2021,t:"Employer of Last Resort as a new 'New Deal': A few thoughts on Turkey",u:S(3984951),s:"Discusses an employer-of-last-resort programme as a policy option for Turkey.",k:"public"}
 ];
 const list = document.getElementById("plist");
@@ -474,7 +478,9 @@ document.querySelectorAll("[data-count]").forEach(el => {
 });
 
 function render(f){
-  const rows = papers.filter(p => f === "all" || (f === "pub" ? p.pub : p.k === f));
+  const rows = f === "sel" ? papers.filter(p => p.sel).sort((a, b) => a.sel - b.sel)
+    : papers.filter(p => f === "all" || (f === "pub" ? p.pub : p.k === f));
+  document.getElementById("more").hidden = f !== "sel";
   list.innerHTML = rows.length ? rows.map(p =>
     '<li><span class="t">' + (p.u ? '<a href="' + p.u + '">' + esc(p.t) + '</a>' : '<span class="nl">' + esc(p.t) + '</span>') +
     (p.v ? '<span class="v">' + esc(p.v) + '</span>' : (p.u ? '' : '<span class="v">Draft available on request</span>')) + (p.s ? '<span class="s">' + esc(p.s) + '</span>' : '') + '</span>' +
@@ -485,11 +491,12 @@ function render(f){
 }
 chips.forEach(c => c.addEventListener("click", () => render(c.dataset.f)));
 layers.forEach(l => l.addEventListener("click", () => {
-  const f = l.getAttribute("aria-pressed") === "true" ? "all" : l.dataset.themeKey;
+  const f = l.getAttribute("aria-pressed") === "true" ? "sel" : l.dataset.themeKey;
   render(f);
   document.getElementById("papers").scrollIntoView();
 }));
-render("all");
+document.getElementById("showall").addEventListener("click", () => render("all"));
+render("sel");
 
 const copy = document.getElementById("copy");
 copy.addEventListener("click", async () => {
