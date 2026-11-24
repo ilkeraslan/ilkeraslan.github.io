@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ilkeraslan.github.io/</loc><lastmod>2026-11-20</lastmod><priority>1.0</priority></url>
+  <url><loc>https://ilkeraslan.github.io/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/turbulent-arbitrage-in-reinsurance.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/reinstatement-provisions-in-catastrophe-reinsurance.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/price-softening-structural-discipline.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
@@ -9,6 +9,9 @@
   <url><loc>https://ilkeraslan.github.io/papers/currency-hedging-taiwan-life-insurers.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/participation-is-not-protection.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/governing-the-unmeasurable.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/safe-haven-inflows-and-domestic-credit.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/monetary-tightening-and-insurers-bond-sales.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/relocating-the-external-constraint.html</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Turbulent_Arbitrage_in_Reinsurance.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Reinstatement_Provisions_in_Catastrophe_Reinsurance.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Price_Softening_Structural_Discipline.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
@@ -17,6 +20,9 @@
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Currency_Hedging_Taiwan_Life_Insurers.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Participation_Is_Not_Protection.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
   <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Governing_the_Unmeasurable.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Safe_Haven_Inflows_and_Domestic_Credit.pdf</loc><lastmod>2026-11-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Monetary_Tightening_and_Insurers_Bond_Sales.pdf</loc><lastmod>2026-11-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ilkeraslan.github.io/papers/Aslan_2026_Relocating_the_External_Constraint.pdf</loc><lastmod>2026-11-24</lastmod><priority>0.6</priority></url>
   <url><loc>https://ilkeraslan.github.io/Ilker_Aslan_CV.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.5</priority></url>
   <url><loc>https://ilkeraslan.github.io/talks/Aslan_Slides_Interest_Rate_Risk_in_Insurance_ALM.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.4</priority></url>
   <url><loc>https://ilkeraslan.github.io/talks/Aslan_Primer_Interest_Rate_Risk_in_Insurance.pdf</loc><lastmod>2026-11-20</lastmod><priority>0.4</priority></url>
